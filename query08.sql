@@ -9,7 +9,21 @@
 */
 
 -- Enter your SQL query here
-
+select 
+    sta.name as station_id,
+    sta.geog as station_geog,
+    count(*) as num_trips
+from (
+    select start_time, start_station from indego.trips_2021_q3
+    union ALL
+    select start_time, start_station from indego.trips_2022_q3
+) as trips
+right join indego.stations_geo as sta
+    on trips.start_station = cast(sta.id as text)
+where cast((extract(hour from start_time)) as INTEGER) between 7 and 9
+group by sta.name, sta.geog
+order by num_trips desc
+limit 5;
 
 /*
     Hint: Use the `EXTRACT` function to get the hour of the day from the

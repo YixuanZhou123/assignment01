@@ -11,7 +11,15 @@
 
 -- Enter your SQL query here
 
-
+SELECT
+    num_trips_2021,
+    num_trips_2022,
+    ROUND(( (num_trips_2022 - num_trips_2021) * 100.0 / num_trips_2021),2) ::text ||'%' as perc_change
+from (
+    select 
+        (select count(*) from indego.trips_2021_q3) as num_trips_2021,
+        (select count(*) from indego.trips_2022_q3) as num_trips_2022
+) as trip_counts;
 
 /*
     If you want to get fancier here, you can cast the result to a string and
