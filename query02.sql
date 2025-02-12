@@ -12,8 +12,6 @@
 -- Enter your SQL query here
 
 SELECT
-    num_trips_2021,
-    num_trips_2022,
     ROUND(( (num_trips_2022 - num_trips_2021) * 100.0 / num_trips_2021),2) ::text ||'%' as perc_change
 from (
     select 

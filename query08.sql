@@ -10,7 +10,7 @@
 
 -- Enter your SQL query here
 select 
-    sta.name as station_id,
+    sta.id as station_id,
     sta.geog as station_geog,
     count(*) as num_trips
 from (
@@ -21,7 +21,7 @@ from (
 right join indego.stations_geo as sta
     on trips.start_station = cast(sta.id as text)
 where cast((extract(hour from start_time)) as INTEGER) between 7 and 9
-group by sta.name, sta.geog
+group by sta.id, sta.geog
 order by num_trips desc
 limit 5;
 
