@@ -10,4 +10,4 @@ from (
     select duration from indego.trips_2021_q3
     UNION ALL
     select duration from indego.trips_2021_q3
-) as duration_two_quarters
+) as duration_two_quarters;

@@ -7,4 +7,4 @@
 
 -- Enter your SQL query here
 select round(avg(duration),2) ::text ||'min' as avg_duration
-from indego.trips_2022_q3
+from indego.trips_2022_q3;

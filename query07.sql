@@ -20,23 +20,7 @@ select
     'Q3' as trip_quarter,
     count(*) as num_trips
 from indego.trips_2022_q3
-where date(start_time) <> date(end_time)
-
-select 
-    '2021' as trip_year,
-    'Q3' as trip_quarter,
-    count(*) as num_trips
-from indego.trips_2021_q3
-where extract(day from start_time)<>extract(day from end_time)
-
-union ALL
-
-select
-    '2022' as trip_year,
-    'Q3' as trip_quarter,
-    count(*) as num_trips
-from indego.trips_2022_q3
-where date(start_time) <> date(end_time)
+where date(start_time) <> date(end_time);
 
 /*
 

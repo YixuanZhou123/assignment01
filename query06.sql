@@ -20,4 +20,4 @@ SELECT
     'Q3' as trip_quarter,
     count(*) as num_trips
 from indego.trips_2022_q3
-where duration < 10
+where duration < 10;

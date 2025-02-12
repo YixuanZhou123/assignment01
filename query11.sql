@@ -13,4 +13,4 @@ select
                 sta.geog
                 ))
         /1000) as avg_distance_km
-from indego.stations_geo as sta
+from indego.stations_geo as sta;

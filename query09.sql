@@ -16,4 +16,4 @@ from (
     select passholder_type from indego.trips_2022_q3
 ) as combined_trips
 group by passholder_type
-order by num_trips DESC
+order by num_trips DESC;
